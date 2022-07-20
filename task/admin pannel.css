@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.container-fluid{
+   background-color: rgb(10, 90, 100);
+    height: fit-content;
+    border: 1px solid black
+    
+}
+.col-md-3{
+    margin-left: 0;
+}
+.col-md-8{
+    margin-top: 0;
+}
+.row{
+    margin:0;
+    justify-content:center
+}
+
+.row .mx-md-n5 .ml-0{
+    margin-left: -2rem;
+    margin-right: -2.5rem;
+}
+
+.row .mx-md-n5 .mr-0{
+    margin-left: -2.5rem;
+    margin-right: -2.5rem;
+}
+.row .mx-md-n5 .mycol
+{
+    margin-bottom: 2rem;
+  
+}
+
+.row .mx-md-n5 .mycol2{
+       margin-left: 3rem;
+}
+
+
+.rounded-circle{
+    height: 12%;
+    width: 42%;
+    margin: 5% auto
+   
+}
+.p{
+    line-height: 1rem;
+}
+.btn-outline-secondary{
+    margin-bottom: 120%;
+}
+.commonborder{
+    box-shadow: 0px 0px 5px 2px rgb(10, 90, 100);
+    border-radius: 2%;
+}
+.tag{
+    box-shadow: 4px -2px 3px 1px  rgb(10, 90, 100);
+}
+video{
+    height:12%;
+    width: 61%;
+    margin-top: 70%;
+    
+}
+.pie{ 
+    margin-top: -4%;
+    height: 12%;
+    width: 83%;
+    margin-bottom: -4%;
+    margin-left: 9%;
+}
+    
+   .bar {
+    margin-top: -2%;
+    height: 12%;
+    width: 111%;
+    margin-bottom: -6%;
+    margin-left: -6%;
+   }
+
+.rounded{
+    margin-top: -1%;
+    height: 12%;
+    width: 91%;
+    
+}
+
+

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+ .divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="fontawesome-free-6.1.1-web/fontawesome-free-6.1.1-web/css/all.css">
+<script src="https://kit.fontawesome.com/0e84854441.js" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" ></script>
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+          class="img-fluid" alt="Phone image">
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <form>
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email" id="form3Example3" class="form-control form-control-lg input"
+                placeholder="Enter a valid email address" />
+                <p id="errorname" style="color : red";></p>
+              <label class="form-label" for="form3Example3">Email address</label>
+              </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+             <input type="password" id="form3Example4" class="form-control form-control-lg"
+                placeholder="Enter password" />
+                <p id="errorpassword" style="color:red";></p>
+              <label class="form-label" for="form3Example4">Password</label>
+            </div>
+
+          <div class="d-flex justify-content-around align-items-center mb-4">
+            <!-- Checkbox -->
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+              <label class="form-check-label" for="form1Example3"> Remember me </label>
+            </div>
+            <a href="#!">Forgot password?</a>
+          </div>
+       <div class="text-center text-lg-start mt-4 pt-2">
+                <button onclick="signup()" type="button" class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;">Sign up</button>
+              <button onclick="login()" type="button" class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+              <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
+                  class="link-danger">Register</a></p>
+            </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript"> 
+    function signup(){
+            
+            var username=document.getElementById("form3Example3").value;
+           // consol.log(username);
+            var password1=document.getElementById("form3Example4").value;
+             var email=/^[a-zA-Z @ #. ]{3,30}$/;
+             var passwordcheck=/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+              
+           if(email.test(username)){
+                document.getElementById('errorname').innerHTML=" ";
+            }else{
+                document.getElementById('errorname').innerHTML=" ***Invalid user name*** ";
+                return false;
+            }
+            
+            if(passwordcheck.test(password1)){
+                document.getElementById('errorpassword').innerHTML=" ";
+            }else{
+                document.getElementById('errorpassword').innerHTML=" ***Invalid password*** ";
+                return false;
+            }
+              console.log(localStorage);
+              localStorage.setItem('Username',username);
+              localStorage.setItem("Password",password1);
+        
+            }
+    
+         function login(){
+             var username=document.getElementById("form3Example3").value;
+             var password1=document.getElementById("form3Example4").value;
+           var userlogin=localStorage.getItem("Username");
+           var passlogin=localStorage.getItem("Password");
+           if(userlogin==username && passlogin==password1){
+            //    alert("Login successfull");
+            location.replace("admin pannel.html")
+           }
+           else{
+                  alert("Invalid username or password");
+           }
+         }
+         let input=document.querySelector(".input");
+         let button=document.querySelector(".button");
+         button.disabled=true;
+         input.addEventListener("change",statehandler);
+         function statehandler(){
+          if(document.querySelector(".input").value ===""){
+            button.disabled=true;
+          }else{
+            button.disabled=false;
+          }
+         }
+  </script>
+</section>
+</html>
